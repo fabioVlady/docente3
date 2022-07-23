@@ -19,8 +19,8 @@
         <div class="row">
             <div class="col-4">
                 @if ($persona->url)
-                    {{-- <img id="picture" class="img-fluid rounded-full img-circle" src="{{ Storage::url($persona->url) }}"/> --}}
-                    <img id="picture" class="img-fluid rounded-full img-circle" src="{{$persona->url}}"/>
+                    <img id="picture" class="img-fluid rounded-full img-circle" src="{{ Storage::url($persona->url) }}"/>
+                    {{-- <img id="picture" class="img-fluid rounded-full img-circle" src="{{$persona->url}}"/> --}}
                 @else
                     <img id="picture" class="img-fluid rounded-full img-circle" src="https://th.bing.com/th/id/R.ac8b08dd3be8772b324e2ff654e18ade?rik=t%2bA25hfzOQv%2fAA&riu=http%3a%2f%2fassets.stickpng.com%2fimages%2f585e4bd7cb11b227491c3397.png&ehk=CuHoUUtbwcv%2fPSZZCmR%2bDEInH5y03ZqbWsSk0S3FAz4%3d&risl=&pid=ImgRaw&r=0"/>
                 @endif
