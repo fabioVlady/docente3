@@ -50,17 +50,17 @@ class UserSeeder extends Seeder
         ]);
 
         $user3 = User::create([
-            'name' => 'Jose Perez Perez',
-            'email' => 'jose2@mail.com',
+            'name' => 'Juan Carlos Sanchez Bolaños',
+            'email' => 'juan@mail.com',
             'password' => bcrypt('123123123')
         ])->assignRole('Admin');
         Persona::create([
-            'nombres' => 'Jose',
-            'paterno' => 'Perez',
-            'materno' => 'Perez',
-            'ci' => '12345',
-            'extension' => 1,
-            'sexo' =>'1',
+            'nombres' => 'Juan Carlos',
+            'paterno' => 'Sanchez',
+            'materno' => 'Bolaños',
+            'ci' => '2392129',
+            'extension' => 'LP',
+            'sexo' =>'Masculino',
             'fecnac' => '11-06-1990',
             'user_id' => $user3->id,
 
