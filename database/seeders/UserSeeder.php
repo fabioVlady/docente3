@@ -65,6 +65,6 @@ class UserSeeder extends Seeder
             'user_id' => $user3->id,
 
         ]);
-        // User::factory(99)->create();
+        User::factory(99)->create();
     }
 }

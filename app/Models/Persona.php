@@ -11,7 +11,7 @@ class Persona extends Model
     use HasFactory;
     
 
-    protected $fillable = ['nombres','paterno','materno','ci','extension','sexo','fecnac','user_id','url','perfil','habilidad'];
+    protected $fillable = ['nombres','paterno','materno','ci','extension','sexo','fecnac','user_id','url','perfil','habilidad','direccion','telefono','celular'];
     
     public function getRouteKeyName()
     {

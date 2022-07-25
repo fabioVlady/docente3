@@ -8,6 +8,7 @@ use App\Models\Curso_Idioma;
 use App\Models\Docente;
 use App\Models\Experiencia;
 use App\Models\Formacion;
+use App\Models\Libro;
 use App\Models\Persona;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
@@ -53,6 +54,7 @@ class HomeController extends Controller
         $curso_extras = Curso_extra::where('persona_id', $persona->id)->get();
         $curso_idiomas = Curso_Idioma::where('persona_id', $persona->id)->get();
         $formacions = Formacion::where('persona_id', $persona->id)->get();
+        $libros = Libro::where('persona_id', $persona->id)->get();
 
         // dd($materias);
         // return $user;
@@ -72,7 +74,7 @@ class HomeController extends Controller
             'Femenino' => 'Femenino',
         ];
         // $pdf = FacadePdf::loadView('admin.pdf',['user'=>$user,'persona'=>$persona,'extensions'=>$extensions,'sexos'=>$sexos,'materias'=>$materias]);
-        $pdf = FacadePdf::loadView('admin.pdf',compact('user','extensions','persona','sexos','materias','experiencias','curso_extras','curso_idiomas','formacions'));
+        $pdf = FacadePdf::loadView('admin.pdf',compact('user','extensions','persona','sexos','materias','experiencias','curso_extras','curso_idiomas','formacions','libros'));
         // $dompdf->setPaper('letter');
         // $pdf->loadHTML('<h1>Test</h1>');
         return $pdf->stream();

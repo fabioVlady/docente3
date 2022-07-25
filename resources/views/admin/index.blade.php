@@ -13,14 +13,13 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="container">
+    <div class="container p-3" style="background: rgb(255, 255, 255, 0.8)">
         {!! Form::model($persona,['route' => ['admin.update',$persona], 'files' => true, 'method' => 'put']) !!}
 
         <div class="row">
             <div class="col-4">
                 @if ($persona->url)
                     <img id="picture" class="img-fluid rounded-full img-circle" src="{{ Storage::url($persona->url) }}"/>
-                    {{-- <img id="picture" class="img-fluid rounded-full img-circle" src="{{$persona->url}}"/> --}}
                 @else
                     <img id="picture" class="img-fluid rounded-full img-circle" src="https://th.bing.com/th/id/R.ac8b08dd3be8772b324e2ff654e18ade?rik=t%2bA25hfzOQv%2fAA&riu=http%3a%2f%2fassets.stickpng.com%2fimages%2f585e4bd7cb11b227491c3397.png&ehk=CuHoUUtbwcv%2fPSZZCmR%2bDEInH5y03ZqbWsSk0S3FAz4%3d&risl=&pid=ImgRaw&r=0"/>
                 @endif
@@ -32,7 +31,7 @@
             <div class="col-8">
                 <div class="form-group">
                     {!! Form::label('perfil', 'Una Breve descripcion para tu Perfil') !!}
-                    {!! Form::textarea('perfil', null, ['class'=>'form-control','rows'=>3]) !!}
+                    {!! Form::textarea('perfil', null, ['class'=>'form-control','rows'=>3,'placeholder'=>'Encabezado de tu Perfil','maxlength'=>'400']) !!}
                     @error('perfil')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -95,10 +94,36 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                {!! Form::label('telefono', 'Telefono') !!}
+                                {!! Form::number('telefono', null, ['class' => 'form-control','placeholder' => 'telefono']) !!}
+                                @error('telefono')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                {!! Form::label('celular', 'Celular') !!}
+                                {!! Form::number('celular', null, ['class' => 'form-control','placeholder' => 'celular']) !!}
+                                @error('celular')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('direccion', 'Direccion') !!}
+                        {!! Form::text('direccion', null, ['class'=>'form-control','placeholder'=>'Escriba su Direccion']) !!}
+                        @error('direccion')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
                     <div class="form-group">
                         {!! Form::label('habilidad', 'Algo breve de tus Habilidades') !!}
-                        {!! Form::textarea('habilidad', null, ['class'=>'form-control','rows'=>3]) !!}
+                        {!! Form::textarea('habilidad', null, ['class'=>'form-control','rows'=>3,'placeholder'=>'Habilidades que quisieras resaltar en tu C.V.','maxlength'=>'350']) !!}
                         @error('habilidad')
                             <span class="text-danger">{{$message}}</span>
                         @enderror

@@ -2,11 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const valores = window.location.href;
 
     //Mostramos los valores en consola:
-    console.log(valores);
+    // console.log(valores);
     const myArray = valores.split("/");
-    console.log(myArray[5])
+    // console.log(myArray[5])
     const dado= parseInt(myArray[5]) ;
-    
 
     var Calendar = FullCalendar.Calendar;
     var Draggable = FullCalendarInteraction.Draggable
@@ -27,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
-    console.log(dado);
-    console.log(typeof(dado));
+    // console.log(dado);
+    // console.log(typeof(dado));
     var calendarEl = document.getElementById('calendar');
     var calendar = new Calendar(calendarEl, {
         plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             delete Event.id;
             delete Event._method;
             sendEvent(routeEvents('routeEventStore'), Event);
-            console.log(Event);
+            // console.log(Event);
         },
         eventDrop: function(info) {
             // alert(info.event.title + " was dropped on " + info.event.start.toISOString());
@@ -162,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
         // events: routeEvents('routeLoadEvents'),
-        events: 'http://127.0.0.1:8000/admin/agenda/'+dado,
-
+        // events: 'http://127.0.0.1:8000/admin/agenda/'+dado,
+        events: window.location.origin+'/admin/agenda/'+dado,
     });
     objCalendar = calendar;
     calendar.render();

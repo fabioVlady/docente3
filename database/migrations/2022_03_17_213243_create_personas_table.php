@@ -24,8 +24,11 @@ return new class extends Migration
             $table->string('sexo');
             $table->date('fecnac');
             $table->string('url')->nullable();
-            $table->string('perfil')->nullable();
-            $table->string('habilidad')->nullable();
+            $table->string('perfil',400)->nullable();
+            $table->string('habilidad',400)->nullable();
+            $table->string('direccion')->nullable();
+            $table->integer('telefono')->nullable();
+            $table->integer('celular')->nullable();
 
 
             $table->unsignedBigInteger('user_id')->unique();

@@ -65,7 +65,7 @@ Route::get('agenda/{id}', function($id){
 
         // $events = Event::where('id',3)->get();  PARA LOS CASOS DE BUSCAR POR UN CAMPO ESPECIFICO
     return response()->json($events);
-})->middleware('can:admin.home');
+})->middleware('can:admin.home')->name('routeAdminAgenda');
 Route::get('/load-events',[EventoController::class,'load'])->name('routeLoadEvents');
 Route::put('/event-update',[EventoController::class,'update'])->name('routeEventUpdate');
 Route::post('/event-store',[EventoController::class,'store'])->name('routeEventStore');
