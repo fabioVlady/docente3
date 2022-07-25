@@ -10688,6 +10688,8 @@ body,
 
 .wrapper .content-wrapper {
   min-height: calc(100vh - calc(3.5rem + 1px) - calc(3.5rem + 1px));
+  background-color: red;
+
   background-image: url('https://www.vippng.com/png/full/59-593098_technology-background-white-png-ferris-wheel.png');
 }
 
